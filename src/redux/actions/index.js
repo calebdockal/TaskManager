@@ -1,4 +1,4 @@
-import {ADD_TASK, TOGGLE_TASK} from './actionTypes';
+import {ADD_TASK, TOGGLE_TASK, DELETE_TASK} from './actionTypes';
 
 let nextId = 0;
 export const addTask = (text) => ({
@@ -10,4 +10,9 @@ export const addTask = (text) => ({
 export const toggleTask = (id) => ({
   type: TOGGLE_TASK,
   id
+});
+
+export const deleteTask = (task) => ({
+  type: DELETE_TASK,
+  payload: task
 });
