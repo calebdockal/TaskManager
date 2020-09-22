@@ -10,17 +10,9 @@ import {
 import {connect} from 'react-redux';
 import {addTask} from '../redux/actions';
 class AddTask extends React.Component {
-  state = {
-    name: ''
-  };
-
   addTask = (text) => {
-    if (this.state.name.length > 0) {
-      this.props.dispatch(addTask(text));
-      this.setState({text: ''});
-    } else {
-      alert('Oh no!! You forgot to make an actual task!');
-    }
+    this.props.dispatch(addTask(text));
+    this.setState({text: ''});
   };
   render() {
     return (
