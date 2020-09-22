@@ -30,7 +30,7 @@ class AddTask extends React.Component {
             underlineColorAndroid="transparent"></TextInput>
         </View>
         <TouchableOpacity
-          onPress={() => this.addTask(this.state.text)}
+          onPress={() => this.addTask(addTask)}
           style={styles.addButton}>
           <Text style={styles.plusStyle}>+</Text>
         </TouchableOpacity>
