@@ -5,15 +5,7 @@ const TaskList = ({tasks, toggleTask}) => (
   <View>
     {tasks.map((task) => (
       <TouchableOpacity key={task.id} onPress={() => toggleTask(task.id)}>
-        <Text
-          style={
-            (task.completed === true
-              ? {textDecorationLine: 'line-through'}
-              : {textDecorationLine: 'none'},
-            {fontSize: 24})
-          }>
-          {task.text}
-        </Text>
+        <Text style={{fontSize: 24}}>{task.text}</Text>
       </TouchableOpacity>
     ))}
   </View>

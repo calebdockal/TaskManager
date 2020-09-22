@@ -10,12 +10,7 @@ import {
 import {connect} from 'react-redux';
 import {addTask} from '../redux/actions';
 class AddTask extends React.Component {
-  state = {
-    text: ''
-  };
-
   addTask = (text) => {
-    //
     this.props.dispatch(addTask(text));
     this.setState({text: ''});
   };
