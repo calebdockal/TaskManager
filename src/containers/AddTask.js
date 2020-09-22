@@ -9,8 +9,8 @@ import {
 } from 'react-native';
 import {connect} from 'react-redux'
 class AddTask extends React.Component {
-    state ={
-        text:''
+    state = {
+        text: ''
     }
 
     addTask = (text) =>{

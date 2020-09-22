@@ -6,7 +6,7 @@ import VisibleTasks from '../containers/VisibleTasks';
 class TaskManager extends Component {
   state = {
     tasks: [],
-    completed: 'NOT_DONE_TASKS'
+    completedTask: 'NOT_DONE_TASKS'
   };
   render() {
     return (

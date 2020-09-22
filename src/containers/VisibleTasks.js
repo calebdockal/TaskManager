@@ -6,7 +6,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    toggleTask: id => dispatch({type: 'TOGGLE_TASK', id})
+    toggleTask: id => dispatch(toggleTask(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(TaskList)
