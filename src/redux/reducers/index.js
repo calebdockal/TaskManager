@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux';
 import tasks from './tasks';
-import completed from './completed';
+import completedTask from './completedTask';
 
 export default combineReducers({
   tasks,
-  completed,
+  completedTask
 });

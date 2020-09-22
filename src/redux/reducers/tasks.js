@@ -6,15 +6,13 @@ const tasks = (state = [], action) => {
         {
           id: action.id,
           text: action.text,
-          completed: false,
-        },
+          completed: false
+        }
       ];
     case 'TOGGLE_TASK':
-      return state.map(task =>
-        (task.id === action.id) 
-        ? {...task, completed: 
-            !task.completed} : 
-            task)
+      return state.map((task) =>
+        task.id === action.id ? {...task, completed: !task.completed} : task
+      );
     default:
       return state;
   }
