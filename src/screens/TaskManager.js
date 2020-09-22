@@ -12,7 +12,6 @@ class TaskManager extends Component {
     return (
       <View style={styles.container}>
         <AddTask />
-
         <View>
           <VisibleTasks />
         </View>

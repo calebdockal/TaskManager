@@ -5,19 +5,20 @@ import {
   View,
   TextInput,
   ScrollView,
-  TouchableOpacity,
+  TouchableOpacity
 } from 'react-native';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
+import {addTask} from '../redux/actions';
 class AddTask extends React.Component {
-    state = {
-        text: ''
-    }
+  state = {
+    text: ''
+  };
 
-    addTask = (text) =>{
-        //
-        this.props.dispatch({type: 'ADD_TASK', text})
-        this.setState({text: ''})
-    }
+  addTask = (text) => {
+    //
+    this.props.dispatch(addTask(text));
+    this.setState({text: ''});
+  };
   render() {
     return (
       <View style={styles.container}>
@@ -27,13 +28,15 @@ class AddTask extends React.Component {
         <ScrollView style={styles.scrollStyle}></ScrollView>
         <View>
           <TextInput
-            onChangeText={(text)=> this.setState({text})}
-            value ={this.state.text}
+            onChangeText={(text) => this.setState({text})}
+            value={this.state.text}
             style={styles.TextInput}
             placeholder="Tasks"
             underlineColorAndroid="transparent"></TextInput>
         </View>
-        <TouchableOpacity onPress={()=> this.addTask(this.state.text)} style={styles.addButton}>
+        <TouchableOpacity
+          onPress={() => this.addTask(this.state.text)}
+          style={styles.addButton}>
           <Text style={styles.plusStyle}>+</Text>
         </TouchableOpacity>
       </View>
@@ -49,7 +52,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#464a48',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 10,
+    padding: 10
   },
   headerText: {color: '#fff', fontSize: 30},
   scrollStyle: {flex: 1},
@@ -63,7 +66,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     alignItems: 'center',
     justifyContent: 'center',
-    elevation: 8,
+    elevation: 8
   },
-  plusStyle: {color: 'white', fontSize: 30},
+  plusStyle: {color: 'white', fontSize: 30}
 });

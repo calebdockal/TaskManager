@@ -3,11 +3,19 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 const TaskList = ({tasks, toggleTask}) => (
   <View>
-    {tasks.map(task => 
+    {tasks.map((task) => (
       <TouchableOpacity key={task.id} onPress={() => toggleTask(task.id)}>
-        <Text style={textStyle}>{task.text}</Text>
+        <Text
+          style={
+            (task.completed === true
+              ? {textDecorationLine: 'line-through'}
+              : {textDecorationLine: 'none'},
+            {fontSize: 24})
+          }>
+          {task.text}
+        </Text>
       </TouchableOpacity>
-    )}
+    ))}
   </View>
 );
 
@@ -18,9 +26,5 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
-  },
-  textStyle: {
-    fontSize: 24,
-    textDecorationLine: task.completed ? 'line-through' : 'none'
   }
 });
