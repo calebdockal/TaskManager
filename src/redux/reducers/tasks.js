@@ -1,6 +1,7 @@
 import {ADD_TASK, DELETE_TASK, TOGGLE_TASK} from '../actions/actionTypes';
 
 const tasks = (state = [], action) => {
+  // switch statement will check which action will be passed
   switch (action.type) {
     case 'ADD_TASK':
       return [

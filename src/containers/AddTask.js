@@ -9,7 +9,11 @@ import {
 } from 'react-native';
 import {connect} from 'react-redux';
 import {addTask} from '../redux/actions';
+import DeleteTask from '../containers/DeleteTask';
 class AddTask extends React.Component {
+  state = {
+    text: ''
+  };
   addTask = (text) => {
     this.props.dispatch(addTask(text));
     this.setState({text: ''});
@@ -20,7 +24,7 @@ class AddTask extends React.Component {
         <View style={styles.header}>
           <Text style={styles.headerText}>Tasks</Text>
         </View>
-        <ScrollView style={styles.scrollStyle}></ScrollView>
+
         <View>
           <TextInput
             onChangeText={(text) => this.setState({text})}
@@ -29,11 +33,14 @@ class AddTask extends React.Component {
             placeholder="Tasks"
             underlineColorAndroid="transparent"></TextInput>
         </View>
-        <TouchableOpacity
-          onPress={() => this.addTask(addTask)}
-          style={styles.addButton}>
-          <Text style={styles.plusStyle}>+</Text>
-        </TouchableOpacity>
+        <View style={{flexDirection: 'row'}}>
+          <TouchableOpacity
+            onPress={() => this.addTask(this.state.text)}
+            style={styles.addButton}>
+            <Text style={styles.plusStyle}>+</Text>
+          </TouchableOpacity>
+          <DeleteTask />
+        </View>
       </View>
     );
   }
@@ -52,9 +59,6 @@ const styles = StyleSheet.create({
   headerText: {color: '#fff', fontSize: 30},
   scrollStyle: {flex: 1},
   addButton: {
-    position: 'absolute',
-    right: 20,
-    bottom: 90,
     backgroundColor: '#464a48',
     width: 90,
     height: 90,
