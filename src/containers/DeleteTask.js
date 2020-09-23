@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {connect} from 'react-redux';
 import {addTask} from '../redux/actions';
-
+import {deleteTask} from '../redux/actions';
 class DeleteTask extends React.Component {
   deleteTask = () => {
     this.props.dispatch(deleteTask());

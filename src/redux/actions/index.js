@@ -12,7 +12,7 @@ export const toggleTask = (id) => ({
   id
 });
 
-export const deleteTask = (task) => ({
+export const deleteTask = (id) => ({
   type: DELETE_TASK,
-  payload: task
+  payload: id
 });
