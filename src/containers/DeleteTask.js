@@ -8,16 +8,16 @@ import {
   TouchableOpacity
 } from 'react-native';
 import {connect} from 'react-redux';
-import {addTask} from '../redux/actions';
 import {deleteTask} from '../redux/actions';
 class DeleteTask extends React.Component {
   deleteTask = () => {
-    this.props.dispatch(deleteTask());
+    this.props.dispatch(deleteTask(id));
   };
   render() {
     return (
       <View>
         <TouchableOpacity
+          onPress={() => this.deleteTask({index: id})}
           style={{
             backgroundColor: '#464a48',
             height: 90,

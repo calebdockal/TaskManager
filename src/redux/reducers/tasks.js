@@ -17,7 +17,7 @@ const tasks = (state = [], action) => {
         task.id === action.id ? {...task, completed: !task.completed} : task
       );
     case 'DELETE_TASK':
-      return state.filter(task.get('id') !== action.payload.id);
+      return [...state.filter(task.get('id') !== action.payload.id)];
     default:
       return state;
   }
